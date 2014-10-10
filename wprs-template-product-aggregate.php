@@ -1,3 +1,10 @@
+/*
+	Filter Box Template output for the WordPress Rich Snippets plugin.
+	This function will display Editor/User rating on the same Box
+	For review tyoe: Aggrgate
+	http://authorhreview.com
+*/
+
 add_filter('wprs_template_product_aggregate','my_template_product_aggregate');
 
 function my_template_product_aggregate() {

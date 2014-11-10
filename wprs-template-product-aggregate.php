@@ -1,3 +1,4 @@
+<?php
 /*
 	Filter Box Template output for the WordPress Rich Snippets plugin.
 	This function will display Editor/User rating on the same Box
@@ -80,3 +81,4 @@ function my_template_product_aggregate() {
 	return $box;
 	
 }
+?>

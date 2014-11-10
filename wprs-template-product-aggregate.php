@@ -14,20 +14,10 @@ function my_template_product_aggregate() {
 	// define $box
 	$box = '';
 	
-	// get box settings
-	$template = wprs_template();
+	// get box template
+	$template = array();
+	if (function_exists('wprs_template')) $template = wprs_template();
 	
-	
-	// tabs
-	$box .= '<div id="wprs_nav_tabs" class="wprs_container container-fluid">';
-		$box .= '<div class="row">';
-			$box .= '<div id="wprs_square">';
-				$box .= $template['nav_tabs'];
-			$box .= '</div>';
-		$box .= '</div>';
-	$box .= '</div>';
-
-	// tab panes
 	$box .= '<div id="wprs_nav_tabs_content" class="tab-content">';
 			
 	$box .= '<div class="tab-pane active" id="item_square">';
@@ -60,7 +50,6 @@ function my_template_product_aggregate() {
 						$box .= '</div>';
 					
 					$box .= '</div>';
-
 					$box .= '<hr />';
 					
 					// display Editor/User criteria
@@ -69,7 +58,6 @@ function my_template_product_aggregate() {
 						$box .= '<div class="col-xs-2 col-sm-2 col-md-2"></div>';
 						$box .= '<div class="col-xs-5 col-sm-5 col-md-5">'.wprs_get_criteria($post->ID, 'user').'</div>';
 					$box .= '</div>';
-
 					$box .= '<hr />';
 					/////////////////////////
 					
@@ -84,17 +72,11 @@ function my_template_product_aggregate() {
 		
 			$box .= '</div>';
 		$box .= '</div>';
-
-
+	
 	$box .= '</div>';
 
-
-	$box .= '<div class="tab-pane" id="user_reviews">';
-		$box .= $template['user_reviews'];
 	$box .= '</div>';
-		 
-	$box .= '</div>';
-
+	
 	return $box;
 	
 }
